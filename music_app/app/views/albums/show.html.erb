@@ -1,0 +1,2 @@
+<h1> <%= @album.title %></h1>
+<h2>By <%= (Band.find_by(id: @album.band_id).name) %></h2>

@@ -1,0 +1,41 @@
+<h1>Add an Album<h1>
+
+<form action="<%= albums_url %>" method="post">
+  <%= auth_token %>
+
+  <label>
+    Title:
+    <input type="text" name="album[title]" value="">
+  </label>
+  <br>
+  <br>
+
+  <label>
+    Year:
+    <input type="text" name="album[year]" value="">
+  </label>
+  <br>
+  <br>
+
+  <label>
+    <br>
+    Live
+    <input type="radio" name="album[live]" value="<%=true%>">
+    Studio
+    <input type="radio" name="album[live]" value="<%=false%>">
+  </label>
+  <br>
+  <br>
+
+  <label>
+    Band:
+    <select name="album[band_id]">
+      <% @bands.each do |band| %>
+        <option value="<%= band.id %>"><%=band.name%></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" name="" value="Add Album">
+
+</form>

@@ -1,0 +1,23 @@
+<h1> Add a Band </h1>
+
+<form action="<%= bands_url %>" method="post">
+  <%= auth_token %>
+
+  <label>
+    Band Name:
+    <input type="text" name="band[name]" value="">
+  </label>
+  <br>
+  <br>
+
+  <input type="submit" name="" value="Add Band">
+  <br>
+  <br>
+  
+  <% if flash.now[:errors] %>
+    <% flash.now[:errors].each do |error| %>
+      <%= error %>
+      <br>
+    <% end %>
+  <% end %>
+</form>
